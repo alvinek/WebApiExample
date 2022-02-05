@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: webapi
   labels:
-    app: webapiexample
+    app: currencyApiExample
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: webapiexample
+      service: webapi
   template:
     metadata:
       labels:
@@ -34,6 +34,7 @@ metadata:
     app: currencyApiExample
     service: webapi
 spec:
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80

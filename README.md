@@ -25,3 +25,11 @@
 ### Get credentials for kubectl:
 ``az aks get-credentials --resource-group <your_resource_group> --name <your_aks_cluster_name>
 
+### Attach ACR to AKS:
+``az aks update --name <your_aks_cluster_name> --resource-group <your_resource_group> --attach-acr <your_acr_name>``
+
+### Deploy WebApi using deploy-webapi.yml:
+``kubectl apply -f deploy-webapi.yml``
+
+Wait for kubernetes to obtain external-ip. This IP will lead you straight to this API.
+
